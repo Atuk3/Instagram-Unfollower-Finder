@@ -27,12 +27,15 @@
     <table>
         <tr>
             <th>Users</th>
+            <th>Links</th>
         </tr>
-        {% for value in not_in_followers %}
+        {%for i in range(not_in_followers|length) %}
         <tr>
-            <td>{{ value }}</td>
+            <td>{{ not_in_followers[i] }}</td>
+            <td><a href="{{ not_in_followers_link[i] }}">{{ not_in_followers_link[i] }}</a></td>
         </tr>
         {% endfor %}
+
     </table>
 
 </body>

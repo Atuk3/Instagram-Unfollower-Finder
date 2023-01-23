@@ -49,7 +49,9 @@ def home():
 def compare_list():
    
     followers_values = []
+    followers_link=[]
     following_values = []
+    following_link=[]
     with open ('static/files/followers.json') as json_file:
         data=json.load(json_file)
     #iterate through the relationships_followers list
@@ -58,6 +60,7 @@ def compare_list():
         for string_data in relationship['string_list_data']:
             # append the value to the values array
             followers_values.append(string_data['value'])
+            followers_link.append(string_data['href'])
 
     with open ('static/files/following.json') as json_file:
         data=json.load(json_file)
@@ -67,12 +70,20 @@ def compare_list():
         for string_data in relationship['string_list_data']:
             # append the value to the values array
              following_values.append(string_data['value'])
+             following_link.append(string_data['href'])
    
     not_in_followers = []
+    not_in_followers_link=[]
     for val in following_values:
         if val not in followers_values:
             not_in_followers.append(val)
-    return render_template('compare.html', not_in_followers=not_in_followers)
+    
+    for non_follower in not_in_followers:
+        index =following_values.index(non_follower)
+        not_in_followers_link.append(following_link[index])
+        
+
+    return render_template('compare.html', not_in_followers=not_in_followers, not_in_followers_link=not_in_followers_link)
 
 if __name__ == '__main__':
     app.run(debug=true)
