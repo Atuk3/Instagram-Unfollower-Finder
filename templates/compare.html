@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Compare Results</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        
+        th {
+            text-align: left;
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>People not following you:</h1>
+    <table>
+        <tr>
+            <th>Users</th>
+        </tr>
+        {% for value in not_in_followers %}
+        <tr>
+            <td>{{ value }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+
+</html>
