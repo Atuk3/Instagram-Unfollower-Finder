@@ -6,22 +6,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+
+    </style>
 </head>
 
 <body>
-    <h1>Instagram Unfollower Finder</h1>
-    <form method="POST" , enctype="multipart/form-data">
-        {{form.hidden_tag()}}
-        <div>
-            <label for="{{ form.file.name }}">Followers:</label> {{ form.file() }}
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <div class="navbar-nav">
+
+                <div><a class="nav-item nav-link" id="home" href="/">Instagram Unfollower Finder</a>
+                </div>
+            </div>
         </div>
-        <br></br>
-        <div>
-            <label for="{{ form.file2.name }}">Following:</label> {{ form.file2() }}
+    </nav>
+
+    <br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Upload Files</h1>
+                <hr>
+                <form method="POST" enctype="multipart/form-data">
+                    <form method="POST" , enctype="multipart/form-data">
+                        {{form.hidden_tag()}}
+                        <div class="form-group">
+                            <div class="custom-file">
+                                <label class="custom-form-label" for="{{ form.file.name }}">Select Followers File:</label> {{ form.file() }}
+                            </div>
+                            <br><br>
+                            <div class="custom-file">
+                                <label for="{{ form.file2.name }}">Select Following File:</label> {{ form.file2() }}
+                            </div>
+                            <br><br>
+                            <div>{{form.submit(class="btn btn-primary")}}</div>
+                        </div>
+
+
+                    </form>
+            </div>
         </div>
-        <br></br>
-        <div>{{form.submit()}}</div>
-    </form>
+    </div>
+
+
+
+
+
+    </div>
+    <br></br>
+    <div class="footer">
+        <p>Designed By Owamagbe David</p>
+    </div>
+
 
 </body>
 

@@ -18,6 +18,7 @@ class UploadFileForm(FlaskForm):
     file2=FileField("Following", validators=[InputRequired()])
     submit=SubmitField("Compare")
 
+
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/home', methods=['GET', 'POST'])
 
