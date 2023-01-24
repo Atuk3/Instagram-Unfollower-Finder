@@ -40,21 +40,30 @@
             </div>
         </div>
     </nav>
+    <br><br>
+    <div class="container">
+        <h1>People not following you:</h1>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Users</th>
+                    <th>Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for i in range(not_in_followers|length) %}
+                <tr>
+                    <td class="font-weight-bold">{{ not_in_followers[i] }}</td>
+                    <td><a href="{{ not_in_followers_link[i] }}">{{ not_in_followers_link[i] }}</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
 
-    <h1>People not following you:</h1>
-    <table>
-        <tr>
-            <th>Users</th>
-            <th>Links</th>
-        </tr>
-        {%for i in range(not_in_followers|length) %}
-        <tr>
-            <td>{{ not_in_followers[i] }}</td>
-            <td><a href="{{ not_in_followers_link[i] }}">{{ not_in_followers_link[i] }}</a></td>
-        </tr>
-        {% endfor %}
 
-    </table>
+        </table>
+
+    </div>
 
 </body>
 
