@@ -56,11 +56,13 @@
                         {{form.hidden_tag()}}
                         <div class="form-group">
                             <div class="custom-file">
-                                <label class="custom-form-label" for="{{ form.file.name }}">Select Followers File:{{ form.file() }}</label>
+                                <label for="file">Select Followers File:</label>
+                                <input type="file" class="form-control-file" id="file" name="file">
                             </div>
                             <br><br>
                             <div class="custom-file">
-                                <label for="{{ form.file2.name }}">Select Following File:{{ form.file2()}}</label>
+                                <label for="file2">Select Following File:</label>
+                                <input type="file" class="form-control-file" id="file2" name="file2">
                             </div>
                             <br><br>
                             <div>{{form.submit(class="btn btn-primary")}}</div>
