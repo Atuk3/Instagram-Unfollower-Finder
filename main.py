@@ -29,20 +29,24 @@ def home():
         file=form.file.data
         file2=form.file2.data
         if file.filename != "followers.json": 
-            flash("Invalid file for Followers.")
-            return render_template('index.html', form=form)
+            # flash("Invalid file for Followers.")
+            flash('Invalid file for Followers.', category='error')
+            return redirect(url_for('home'))
+            # return render_template('index.html', form=form)
             
         if file2.filename != "following.json":
-             flash("Invalid file for Following.")
-             return render_template('index.html', form=form)
+            #  flash("Invalid file for Following.")
+             flash('Invalid file for Following.', category='error')
+             return redirect(url_for('home'))
+            #  return render_template('index.html', form=form)
             
+        else:
+            file.save(os.path.join(os.path.abspath(os.path.dirname(__file__)),app.config['UPLOAD_FOLDER'], secure_filename(file.filename)))
+            file2.save(os.path.join(os.path.abspath(os.path.dirname(__file__)),app.config['UPLOAD_FOLDER'], secure_filename(file2.filename)))
+            
+            # flash('Files Uploaded Successfully!', category='success')
+            return redirect(url_for('compare_list'))
         
-        file.save(os.path.join(os.path.abspath(os.path.dirname(__file__)),app.config['UPLOAD_FOLDER'], secure_filename(file.filename)))
-        file2.save(os.path.join(os.path.abspath(os.path.dirname(__file__)),app.config['UPLOAD_FOLDER'], secure_filename(file2.filename)))
-        
-        
-        return redirect(url_for('compare_list'))
-    
     return render_template('index.html', form=form)
 
 
