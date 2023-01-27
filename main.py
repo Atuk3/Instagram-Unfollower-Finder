@@ -74,6 +74,11 @@ def home():
             return render_template('compare.html', not_in_followers=not_in_followers, not_in_followers_link=not_in_followers_link)
     return render_template('index.html', form=form)
 
+@app.route('/about', methods=['GET', 'POST'])
+def about():
+    return render_template('about.html')
+
+
 
 if __name__ == '__main__':
     app.run(debug=true)

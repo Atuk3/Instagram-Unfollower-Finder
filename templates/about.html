@@ -1,30 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <title>Not following</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        th,
-        td {
-            border: 1px solid black;
-            padding: 8px;
-        }
-        
-        th {
-            text-align: left;
-            background-color: #f2f2f2;
-        }
-    </style>
 </head>
 
 <body>
@@ -35,37 +21,28 @@
         <div class="collapse navbar-collapse" id="navbar">
             <div class="navbar-nav">
 
-                <div><a class="nav-item nav-link" id="home" href="/">Instagram Unfollower Finder</a>
-                </div>
+                <div><a class="nav-item nav-link" id="home" href="/">Instagram Unfollower Finder</a></div>
                 <a class="nav-item nav-link" id="about" href="/about">About</a>
             </div>
         </div>
     </nav>
     <br><br>
     <div class="container">
-        <h1>People not following you:</h1>
-        <br>
-        <table>
-            <thead>
-                <tr>
-                    <th>Users</th>
-                    <th>Links</th>
-                </tr>
-            </thead>
-            <tbody>
-                {%for i in range(not_in_followers|length) %}
-                <tr>
-                    <td class="font-weight-bold">{{ not_in_followers[i] }}</td>
-                    <td><a href="{{ not_in_followers_link[i] }}">{{ not_in_followers_link[i] }}</a></td>
-                </tr>
-                {% endfor %}
-            </tbody>
+        <div class="row">
+            <h1>Welcome to our website!</h1>
+            <br></br>
+            <p>We are providing an efficient and user-friendly tool that helps Instagram users track who they follow that doesn't follow them back. Our tool, called "Instagram Unfollower Finder (IUF)," is a web application that can be accessed on both mobile
+                phones and PCs.
+            </p>
+            <p>We believe that our tool can help you better manage your Instagram account by allowing you to focus on building relationships with accounts that are mutually beneficial. Our goal is to help you grow your Instagram following and engagement
+                by providing you with the insights you need to make informed decisions about who to follow and interact with on the platform.</p>
+            <p>Thank you for choosing our tool, and we hope you find it to be a valuable asset in your Instagram journey!</p>
 
+            <p>Please note that this tool is currently in beta version and we will continue to release updates and new features.</p>
+            <p>"We" are a team of "one" Nigerian Cyber Security student who created this tool.</p>
 
-        </table>
-
+        </div>
     </div>
-
 </body>
 
 </html>
