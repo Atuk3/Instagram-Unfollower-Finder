@@ -23,72 +23,57 @@ class UploadFileForm(FlaskForm):
 @app.route('/home', methods=['GET', 'POST'])
 
 def home():
-    form =UploadFileForm()
+    form = UploadFileForm()
     
     if form.validate_on_submit():
-        file=form.file.data
-        file2=form.file2.data
-        if file.filename != "followers.json": 
-            # flash("Invalid file for Followers.")
+        file = form.file.data
+        file2 = form.file2.data
+
+        if file.filename != "followers.json":
             flash('Invalid file for Followers.', category='error')
             return redirect(url_for('home'))
-            # return render_template('index.html', form=form)
-            
         if file2.filename != "following.json":
-            #  flash("Invalid file for Following.")
-             flash('Invalid file for Following.', category='error')
-             return redirect(url_for('home'))
-            #  return render_template('index.html', form=form)
-            
+            flash('Invalid file for Following.', category='error')
+            return redirect(url_for('home'))
+
         else:
-            file.save(os.path.join(os.path.abspath(os.path.dirname(__file__)),app.config['UPLOAD_FOLDER'], secure_filename(file.filename)))
-            file2.save(os.path.join(os.path.abspath(os.path.dirname(__file__)),app.config['UPLOAD_FOLDER'], secure_filename(file2.filename)))
+            # Read the contents of the files into memory
+            followers_data = json.loads(file.read())
+            following_data = json.loads(file2.read())
             
-            # flash('Files Uploaded Successfully!', category='success')
-            return redirect(url_for('compare_list'))
-        
+            followers_values = []
+            followers_link = []
+            following_values = []
+            following_link = []
+
+            #iterate through the relationships_followers list
+            for relationship in followers_data['relationships_followers']:
+                # iterate through the string_list_data list
+                for string_data in relationship['string_list_data']:
+                    # append the value to the values array
+                    followers_values.append(string_data['value'])
+                    followers_link.append(string_data['href'])
+
+            # iterate through the relationships_followers list
+            for relationship in following_data['relationships_following']:
+                # iterate through the string_list_data list
+                for string_data in relationship['string_list_data']:
+                    # append the value to the values array
+                    following_values.append(string_data['value'])
+                    following_link.append(string_data['href'])
+   
+            not_in_followers = []
+            not_in_followers_link = []
+            for val in following_values:
+                if val not in followers_values:
+                    not_in_followers.append(val)
+    
+            for non_follower in not_in_followers:
+                index = following_values.index(non_follower)
+                not_in_followers_link.append(following_link[index])
+            return render_template('compare.html', not_in_followers=not_in_followers, not_in_followers_link=not_in_followers_link)
     return render_template('index.html', form=form)
 
-
-@app.route('/compare', methods=['GET', 'POST'])
-def compare_list():
-   
-    followers_values = []
-    followers_link=[]
-    following_values = []
-    following_link=[]
-    with open ('static/files/followers.json') as json_file:
-        data=json.load(json_file)
-    #iterate through the relationships_followers list
-    for relationship in data['relationships_followers']:
-        # iterate through the string_list_data list
-        for string_data in relationship['string_list_data']:
-            # append the value to the values array
-            followers_values.append(string_data['value'])
-            followers_link.append(string_data['href'])
-
-    with open ('static/files/following.json') as json_file:
-        data=json.load(json_file)
-   # iterate through the relationships_followers list
-    for relationship in data['relationships_following']:
-        # iterate through the string_list_data list
-        for string_data in relationship['string_list_data']:
-            # append the value to the values array
-             following_values.append(string_data['value'])
-             following_link.append(string_data['href'])
-   
-    not_in_followers = []
-    not_in_followers_link=[]
-    for val in following_values:
-        if val not in followers_values:
-            not_in_followers.append(val)
-    
-    for non_follower in not_in_followers:
-        index =following_values.index(non_follower)
-        not_in_followers_link.append(following_link[index])
-        
-
-    return render_template('compare.html', not_in_followers=not_in_followers, not_in_followers_link=not_in_followers_link)
 
 if __name__ == '__main__':
     app.run(debug=true)
