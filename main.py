@@ -78,6 +78,10 @@ def home():
 def about():
     return render_template('about.html')
 
+@app.route('/tutorial', methods=['GET', 'POST'])
+def tutorial():
+    return render_template('tutorial.html')
+
 
 
 if __name__ == '__main__':
