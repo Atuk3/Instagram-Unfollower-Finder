@@ -5,6 +5,9 @@ This web application tool that helps Instagram users see who they follow that is
 ![Instagram Unfollower Finder Home Page](static\images\iufhomepage.png)
 ![Instagram Unfollower Finder Compare Page](static\images\iufcomparepage.png)
 
+![alt text](image.png)
+![alt text](image-1.png)
+
 <!-- ![image](https://user-images.githubusercontent.com/72551453/218328016-5888caa2-45e6-41ef-810c-2db630b72977.png) -->
 
 ### For this project I made use of these technologies:
