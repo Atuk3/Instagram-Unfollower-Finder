@@ -2,9 +2,6 @@
 
 This web application tool that helps Instagram users see who they follow that is not following them back on Instagram. It is free and can be accessed on https://atuke.pythonanywhere.com/.
 
-![Instagram Unfollower Finder Home Page](static\images\iufhomepage.png)
-![Instagram Unfollower Finder Compare Page](static\images\iufcomparepage.png)
-
 ![alt text](image.png)
 ![alt text](image-1.png)
 
