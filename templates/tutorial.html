@@ -11,50 +11,121 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+       .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffc107;
+        }
+        .nav-link {
+            color: #fff !important;
+            font-size: 1.1rem;
+        }
+
+        .nav-link:hover {
+            color: #ffc107 !important;
+        }
+        .container-fluid {
+            background-color: #1c1b1b;
+            border-radius: 8px;
+            padding: 30px;
+        }
+
+        h2 {
+            color: #ffc107;
+        }
+
+        .card {
+            background-color: #1c1b1b;
+            border: 1px solid #333;
+        }
+
+        .card-header {
+            background-color: #333;
+            color: #ffc107;
+        }
+
+        .list-group-item {
+            background-color: #1c1b1b;
+            color: #e0e0e0;
+            border: 1px solid #333;
+        }
+
+        .list-group-item:hover {
+            background-color: #333;
+        }
+
+        .btn-primary {
+            background-color: #ffc107;
+            border-color: #ffc107;
+        }
+
+        .btn-primary:hover {
+            background-color: #e0a800;
+            border-color: #e0a800;
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
-              <span class="navbar-toggler-icon"></span>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg" style="background-color: #1c1b1b;">
+        <a class="navbar-brand" href="/">Instagram Unfollower Finder</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-        <div class="collapse navbar-collapse" id="navbar">
-            <div class="navbar-nav">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tutorial">Tutorial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    
 
-                <div><a class="nav-item nav-link" id="home" href="/">Instagram Unfollower Finder</a></div>
-                <a class="nav-item nav-link" id="tutorial" href="/tutorial">Tutorial</a>
-                <a class="nav-item nav-link" id="about" href="/about">About</a>
-            </div>
-        </div>
-    </nav>
-    <br><br>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="container-fluid bg-light py-5">
-                    <h2 class="text-center">Tutorial: How to Use the Tool</h2>
-                    <br><br>
-                    <ol class="list-unstyled">
-                        <li>Step 1: Open Instagram through website </li>
-                        <li>Step 2: Go to Settings</li>
-                        <li>Step 3: Go to Privacy and Security</li>
-                        <li>Step 4: Click on "Request download" in Data download</li>
-                        <li>Step 5: Select "JSON" as the Information format and Request Download</li>
-                        <li>Step 6: Download the file from the email sent to you by Instagram</li>
-                        <li>Step 7: Extract all folders from the zip file</li>
-                        <li>Step 8: In the Instagram Unfollower Finder tool. Choose the followers and following file from the extracted folder named "followers_and_following"</li>
-                        <li>Step 9: Click the "Compare" button</li>
-                        <li>Step 10: Review the output</li>
-                    </ol>
-                    <p>The tutorial is the same for mobile phones and PCs</p>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col">
+                    <div class="container-fluid py-5">
+                        <h2 class="text-center">Tutorial: How to Use the Tool</h2>
+                        <br>
+                        <div class="card">
+                            <div class="card-header">
+                                Step-by-Step Instructions
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Open Instagram</li>
+                                <li class="list-group-item">Go to Settings</li>
+                                <li class="list-group-item">Go to Accounts Centre</li>
+                                <li class="list-group-item">Go to Your information and permissions</li>
+                                <li class="list-group-item">Click on "Download your information"</li>
+                                <li class="list-group-item">Click on "Some of your information" in Download information</li>
+                                <li class="list-group-item">Select "Followers and Following" in the Connections Menu</li>
+                                <li class="list-group-item">Select "Download to device, Date range: Last month and JSON format" then Create files</li>
+                                <li class="list-group-item">Download the file when Instagram sends an email to confirm the requested file is ready for download</li>
+                                <li class="list-group-item">Extract all folders from the zip file</li>
+                                <li class="list-group-item">In the Instagram Unfollower Finder tool, choose the followers and following file from the extracted folder named "connections"</li>
+                                <li class="list-group-item">Click the "Compare" button</li>
+                                <li class="list-group-item">Review the output</li>
+                            </ul>
+                        </div>
+                        <p class="text-center mt-4">The tutorial is the same for mobile phones and PCs</p>
+                    </div>
                 </div>
-                <p>Note: Instagram should be opened on website as you cannot request your data on the mobile app</p>
-                <a href="https://youtu.be/dYLxDBYqITg" class="btn btn-danger">Watch PC Tutorial Video</a>
-                <!--<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-secondary">Watch Mobile Tutorial</a>-->
             </div>
         </div>
-    </div>
-    </div>
+    <!-- Uncomment these buttons if needed -->
+                    <!-- <a href="https://youtu.be/dYLxDBYqITg" class="btn btn-custom">Watch PC Tutorial Video</a> -->
+                    <!-- <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-secondary-custom">Watch Mobile Tutorial</a> -->
 </body>
 
 </html>

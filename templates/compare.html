@@ -1,51 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Following</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <title>Not following</title>
     <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .navbar {
+            background-color: #1c1b1b;
+        }
+
+        .navbar-nav .nav-link {
+            color: #e0e0e0;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffc107;
+        }
+
+        h1 {
+            color: #ffffff;
+            margin-top: 20px;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
+            background-color: #1c1b1b;
         }
-        
-        th,
-        td {
-            border: 1px solid black;
-            padding: 8px;
+
+        th, td {
+            border: 1px solid #333;
+            padding: 12px;
         }
-        
+
         th {
             text-align: left;
-            background-color: #f2f2f2;
+            background-color: #333;
+            color: #ffc107;
+        }
+
+        td {
+            color: #e0e0e0;
+        }
+
+        a {
+            color: #ffc107;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-        <div class="collapse navbar-collapse" id="navbar">
-            <div class="navbar-nav">
-
-                <div><a class="nav-item nav-link" id="home" href="/">Instagram Unfollower Finder</a></div>
-                <a class="nav-item nav-link" id="tutorial" href="/tutorial">Tutorial</a>
-                <a class="nav-item nav-link" id="about" href="/about">About</a>
-            </div>
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg" style="background-color: #1c1b1b;">
+    <a class="navbar-brand" href="/">Instagram Unfollower Finder</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/tutorial">Tutorial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+            </ul>
         </div>
     </nav>
-    <br><br>
+
     <div class="container">
-        <h1>People not following you:</h1>
-        <br>
-        <table>
+        <h1 class="text-center" style="color:#ffc107">People Not Following You:</h1>
+        <table class="table table-bordered mt-4" style="background-color:#333;">
             <thead>
                 <tr>
                     <th>Users</th>
@@ -53,19 +93,15 @@
                 </tr>
             </thead>
             <tbody>
-                {%for i in range(not_in_followers|length) %}
+                {% for i in range(not_in_followers|length) %}
                 <tr>
                     <td class="font-weight-bold">{{ not_in_followers[i] }}</td>
                     <td><a href="{{ not_in_followers_link[i] }}">{{ not_in_followers_link[i] }}</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
-
-
         </table>
-
     </div>
-
 </body>
 
 </html>

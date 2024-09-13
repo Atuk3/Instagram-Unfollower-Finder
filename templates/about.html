@@ -11,40 +11,99 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .navbar {
+            background-color: #1c1b1b;
+        }
+
+        .navbar-brand {
+            color: #ffc107;
+        }
+
+        .navbar-nav .nav-link {
+            color: #e0e0e0;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffc107;
+        }
+
+        h1, h2 {
+            color: #ffffff;
+        }
+
+        .card {
+            background-color: #1c1b1b;
+            border: 1px solid #333;
+            border-radius: 8px;
+        }
+
+        .card-header {
+            background-color: #333;
+            color: #ffc107;
+        }
+
+        .card-body {
+            color: #e0e0e0;
+        }
+
+        .btn-primary {
+            background-color: #ffc107;
+            border-color: #ffc107;
+        }
+
+        .btn-primary:hover {
+            background-color: #e0a800;
+            border-color: #e0a800;
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-        <div class="collapse navbar-collapse" id="navbar">
-            <div class="navbar-nav">
-
-                <div><a class="nav-item nav-link" id="home" href="/">Instagram Unfollower Finder</a></div>
-                <a class="nav-item nav-link" id="tutorial" href="/tutorial">Tutorial</a>
-                <a class="nav-item nav-link" id="about" href="/about">About</a>
-            </div>
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg" style="background-color: #1c1b1b;">
+    <a class="navbar-brand" href="/">Instagram Unfollower Finder</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/tutorial">Tutorial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+            </ul>
         </div>
     </nav>
-    <br><br>
-    <div class="container">
+
+
+    <div class="container mt-5">
         <div class="row">
-            <div class="col">
-                <h1>Welcome to our website!</h1>
-                <br></br>
-                <p>We are providing an efficient and user-friendly tool that helps Instagram users track who they follow that doesn't follow them back. Our tool, called "Instagram Unfollower Finder (IUF)," is a web application that can be accessed on both
-                    mobile phones and PCs.
-                </p>
-                <p>We believe that our tool can help you better manage your Instagram account by allowing you to focus on building relationships with accounts that are mutually beneficial. Our goal is to help you grow your Instagram following and engagement
-                    by providing you with the insights you need to make informed decisions about who to follow and interact with on the platform.</p>
-                <p>Thank you for choosing our tool, and we hope you find it to be a valuable asset in your Instagram journey!</p>
-
-                <p>Please note that this tool is currently in beta version and we will continue to release updates and new features.</p>
-                <!--<p>"We" are a team of "one" Nigerian Cyber Security student who created this tool.</p>-->
-                <br><br>
-                <p>If you have any questions, enquiries, or suggestions, please feel free to contact me at <strong>owamagbedavid@gmail.com</strong> </p>
-
+            <div class="col-md-8 mx-auto">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h2>About Us</h2>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead">Welcome to Instagram Unfollower Finder (IUF), your go-to tool for managing your Instagram account efficiently.</p>
+                        <p>Our web application helps Instagram users identify who they follow that does not follow them back. Accessible on both mobile devices and PCs, our tool provides valuable insights to help you focus on building meaningful connections.</p>
+                        <p>With IUF, you can make informed decisions about your Instagram interactions, allowing you to grow your following and engagement more effectively.</p>
+                        <p>Thank you for choosing IUF. We hope you find our tool beneficial in enhancing your Instagram experience!</p>
+                        <p><strong>Note:</strong> The tool is currently in beta, and we are continuously working on updates and new features to improve your experience.</p>
+                        <p><strong>Disclaimer:</strong> Please be aware that using this tool might be against Instagram's terms of service. The developer is not responsible for any issues or consequences arising from its use.</p>
+                        <p>If you have any questions, suggestions, or feedback, please contact us at <strong>owamagbedavid@gmail.com</strong>.</p>
+                        <div class="text-center mt-4">
+                            <a href="/" class="btn btn-primary">Back to Home</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -1,18 +1,21 @@
 # Instagram-Unfollower-Finder
 
-
 This web application tool that helps Instagram users see who they follow that is not following them back on Instagram. It is free and can be accessed on https://atuke.pythonanywhere.com/.
 
-![image](https://user-images.githubusercontent.com/72551453/218328016-5888caa2-45e6-41ef-810c-2db630b72977.png)
+![Instagram Unfollower Finder Home Page](static\images\iufhomepage.png)
+![Instagram Unfollower Finder Compare Page](static\images\iufcomparepage.png)
+
+<!-- ![image](https://user-images.githubusercontent.com/72551453/218328016-5888caa2-45e6-41ef-810c-2db630b72977.png) -->
 
 ### For this project I made use of these technologies:
+
 - Python (Flask)
 - HTML
 - CSS (Bootstrap)
 - PythonAnywhere to host the web app
 
-
 How to Use
+
 1. Go to https://atuke.pythonanywhere.com/
 2. Open Instagram through website
 3. Go to Settings
@@ -29,9 +32,10 @@ How to Use
 
 The tutorial is the same for mobile phones and PCs.
 
-
 ### Disclaimer
+
 Please note that using this tool may be against Instagram's terms of service. The developer is not responsible for any issues or consequences that may arise from using this tool.
 
 ### Feedback and Support
+
 If you have any feedback or questions, please contact the developer at owamagbedavid@gmail.com.
