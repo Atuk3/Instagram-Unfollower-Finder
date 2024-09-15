@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs</title>
+    <!-- Bootstrap CSS and FontAwesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous" />
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffc107;
+        }
+        .nav-link {
+            color: #fff !important;
+        }
+        .nav-link:hover {
+            color: #ffc107 !important;
+        }
+        .card {
+            background-color: #1c1b1b;
+            border-color: #333;
+        }
+        .card-header {
+            background-color: #333;
+            color: #ffc107;
+        }
+        .btn-warning {
+            background-color: #ffc107;
+            border-color: #ffc107;
+            color: #333;
+        }
+        .btn-warning:hover {
+            background-color: #e0a800;
+            border-color: #e0a800;
+        }
+        .accordion .card-header {
+            padding: 0;
+        }
+        .accordion .btn-link {
+            display: block;
+            width: 100%;
+            text-align: left;
+            color: #ffc107;
+            padding: 10px 15px;
+        }
+        .accordion .btn-link:hover {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1c1b1b;">
+        <a class="navbar-brand" href="/" style="color: #ffc107;">Instagram Unfollower Finder</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/tutorial">Tutorial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- FAQ Content -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="card">
+                    <div class="card-header text-center">
+                <h1>Frequently Asked Questions</h1>
+            </div>
+            <div class="card-body">
+                <div id="faqAccordion" class="accordion">
+                    <!-- FAQ 1 -->
+                    <div class="card">
+                        <div class="card-header" id="faqHeading-1">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#faqCollapse-1" aria-expanded="true" aria-controls="faqCollapse-1">
+                                    What is Instagram Unfollower Finder?
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="faqCollapse-1" class="collapse show" aria-labelledby="faqHeading-1" data-parent="#faqAccordion">
+                            <div class="card-body">
+                                Instagram Unfollower Finder is a simple tool that allows you to compare your follower and following lists to see who is not following you back on Instagram.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="card">
+                        <div class="card-header" id="faqHeading-2">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#faqCollapse-2" aria-expanded="false" aria-controls="faqCollapse-2">
+                                    Is my data safe?
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="faqCollapse-2" class="collapse" aria-labelledby="faqHeading-2" data-parent="#faqAccordion">
+                            <div class="card-body">
+                                Yes! We do not collect or store any of your data. All the processing happens locally on your device, and none of your personal information is uploaded to our servers.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="card">
+                        <div class="card-header" id="faqHeading-3">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#faqCollapse-3" aria-expanded="false" aria-controls="faqCollapse-3">
+                                    How do I use the tool?
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="faqCollapse-3" class="collapse" aria-labelledby="faqHeading-3" data-parent="#faqAccordion">
+                            <div class="card-body">
+                                To use the tool, simply download your Instagram data from Instagram settings, upload your followers and following files, and the tool will compare them for you.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="card">
+                        <div class="card-header" id="faqHeading-4">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#faqCollapse-4" aria-expanded="false" aria-controls="faqCollapse-4">
+                                    Does this tool violate Instagram's policies?
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="faqCollapse-4" class="collapse" aria-labelledby="faqHeading-4" data-parent="#faqAccordion">
+                            <div class="card-body">
+                                No, this tool does not violate Instagram's policies. It simply compares data you upload from Instagram's own export tool without accessing Instagram directly.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-center">
+                <a href="/" class="btn btn-warning">Go back to Home</a>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+    
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white py-3">
+        <p>&copy; 2024 Instagram Unfollower Finder | <a href="/privacypolicy" class="text-warning">Privacy Policy</a> | <a href="/termsofservice" class="text-warning">Terms of Service</a></p>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</body>
+</html>

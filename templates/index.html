@@ -65,8 +65,12 @@
         }
       
         footer {
+            background-color: #1c1b1b;
             padding: 10px 0;
             color: #e0e0e0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
 
         footer p {
@@ -78,11 +82,30 @@
         }
 
         .alert {
-            margin-bottom: 0; /* Adjust to prevent form from being pushed down */
+            margin-bottom: 0;
         }
 
         .form-container {
-            margin-top: 30px; /* Adjust as needed to position the form properly */
+            margin-top: 30px;
+            margin-bottom: 80px; /* To prevent footer overlap */
+        }
+
+        /* Ensure footer icons are properly colored */
+        .footer-icons a {
+            color: #e0e0e0;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-icons a:hover {
+            color: #ffc107;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            .footer-icons a {
+                margin: 0 5px;
+            }
         }
     </style>
 </head>
@@ -90,8 +113,8 @@
 <body>
 
    <!-- Navbar -->
-   <nav class="navbar navbar-expand-lg" style="background-color: #1c1b1b;">
-    <a class="navbar-brand" href="/">Instagram Unfollower Finder</a>
+   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1c1b1b;">
+    <a class="navbar-brand" href="/" style="color: #ffc107;">Instagram Unfollower Finder</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -147,8 +170,23 @@
                     </div>
                 </div>
 
+                <!-- Checkbox for agreeing to policies -->
+                <div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="agree" name="agree" required>
+                        <label class="custom-control-label" for="agree">
+                            By clicking "Compare", you agree to our 
+                            <a href="/privacypolicy" class="text-info">Privacy Policy</a> and 
+                            <a href="/termsofservice" class="text-info">Terms of Service</a>.
+                        </label>
+                    </div>
+                </div>
+
                 <div>{{ form.submit(class="btn btn-primary btn-block mt-3") }}</div>
             </form>
+            <p class="mt-4 text-center">Need help finding the followers and following file? 
+                <a href="/tutorial" class="text-info">Click here</a>
+            </p>
         </div>
     </div>
   </div>
@@ -157,7 +195,10 @@
  <!-- Footer -->
 <footer class="fixed-bottom" style="background-color: #1c1b1b;">
     <div class="container d-flex justify-content-center align-items-center">
-        <p style="color:#ffc107; margin: 0;">Designed By Owamagbe David</p>
+        <p style="color:#ffc107; margin: 0;">Designed By Owamagbe David | 
+            <a href="/privacypolicy" style="color: #ffc107;">Privacy Policy</a> | 
+            <a href="/termsofservice" style="color: #ffc107;">Terms of Service</a> | 
+            <a href="/faqs" style="color: #ffc107;">FAQs</a>
     </div>
     <div class="container d-flex justify-content-center mt-2">
         <a href="https://www.linkedin.com/in/david-owamagbe-1850b8196/" target="_blank" style="color: #0077b5; margin-right: 15px;">

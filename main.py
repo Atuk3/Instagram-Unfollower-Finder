@@ -94,6 +94,18 @@ def about():
 def tutorial():
     return render_template('tutorial.html')
 
+@app.route('/termsofservice', methods=['GET', 'POST'])
+def termsofservice():
+    return render_template('termsofservice.html')
+
+@app.route('/privacypolicy', methods=['GET', 'POST'])
+def privacypolicy():
+    return render_template('privacypolicy.html')
+
+@app.route('/faqs', methods=['GET', 'POST'])
+def faqs():
+    return render_template('faqs.html')
+
 
 if __name__ == '__main__':
     app.run(debug=true)
